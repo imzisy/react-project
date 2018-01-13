@@ -3,9 +3,7 @@ import {combineReducers, createStore,applyMiddleware} from "redux";
 import {Provider} from "react-redux";
 import ReactDOM from 'react-dom';
 import './index.css';
-
 import App from "./containers/App";
-
 import a from "./reducers/aReducer";
 import b from "./reducers/bReducer";
 import c from "./reducers/cReducer";
@@ -13,7 +11,6 @@ import text from "./reducers/textReducer";
 import error from "./reducers/errorReducer";
 import form from "./reducers/formReducer";
 import registerServiceWorker from './registerServiceWorker';
-
  
 const props = {
     a: [],

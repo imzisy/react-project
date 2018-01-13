@@ -33,7 +33,6 @@ export function checkText() {
 }
 
 export function submit(values) {
-    console.log('submit fun')
     return {
         type: "SUBMIT",
         payload : values
