@@ -1,7 +1,7 @@
 const a = (state =[], action) => {
     switch (action.type) {
         case "ADD_A":
-            return state= [
+            return [
                 ...state,
                 action.payload
             ]
