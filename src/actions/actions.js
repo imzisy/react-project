@@ -20,21 +20,21 @@ export function setC(value) {
 }
 
 export function setText(value) {
-    return {
-        type: "SET_TEXT",
-        payload: value
-    };
+  return {
+    type: 'SET_TEXT',
+    payload: value,
+  };
 }
 
 export function checkText() {
-    return {
-        type: "CHECK_TEXT",
-    };
+  return {
+    type: 'CHECK_TEXT',
+  };
 }
 
 export function submit(values) {
-    return {
-        type: "SUBMIT",
-        payload : values
-    };
+  return {
+    type: 'SUBMIT',
+    payload: values,
+  };
 }

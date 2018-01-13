@@ -1,10 +1,10 @@
-const b = (state= null, action) => {
-    switch (action.type) {
-        case "SET_B":
-            return action.payload;
-        default:
-            return state
-    }
+const b = (state = null, action) => {
+  switch (action.type) {
+    case 'SET_B':
+      return action.payload;
+    default:
+      return state;
+  }
 };
 
 export default b;

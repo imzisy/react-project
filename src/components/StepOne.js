@@ -1,18 +1,23 @@
 
-import React, { Component }  from "react";
-import NextButton from "./NextButton";
+import React from 'react';
+import PropTypes from 'prop-types';
+import NextButton from './NextButton';
 
-class StepOne extends Component {
-    render() {
-        return (
-            <div className="form-group">
-                <input type="checkbox" onClick={(e) => this.props.handleCheckedValues(e.target.value)} value="A1"/> A1<br/>
-                <input type="checkbox" onClick={(e) => this.props.handleCheckedValues(e.target.value)} value="A2"/> A2
-                <br/><br/>
-                { this.props.state.a.length>0 ? <NextButton next={this.props.next}/> : null }
-            </div>
-        )
-    }
+function StepOne(props) {
+  return (
+    <div className="form-group">
+      <input type="checkbox" onClick={props.handleCheckedValues} value="A1" /> A1<br />
+      <input type="checkbox" onClick={props.handleCheckedValues} value="A2" /> A2
+      <br /><br />
+      { props.state.a.length > 0 ? <NextButton next={props.next} /> : null }
+    </div>
+  );
 }
+
+StepOne.propTypes = {
+  handleCheckedValues: PropTypes.func.isRequired,
+  next: PropTypes.func.isRequired,
+  state: PropTypes.shape({ a: [] }).isRequired,
+};
 
 export default StepOne;

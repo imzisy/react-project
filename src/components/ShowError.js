@@ -1,10 +1,13 @@
 
-import React, { Component }  from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class Step extends Component {
-    render() {
-        return(<div>{this.props.message}</div>)
-    }
+function ShowError(props) {
+  return <div>{ props.message}</div>;
 }
 
-export default Step;
+ShowError.propTypes = {
+  message: PropTypes.string.isRequired,
+};
+
+export default ShowError;
