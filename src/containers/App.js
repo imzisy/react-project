@@ -68,7 +68,9 @@ class App extends Component {
               <button
                 className="btn btn-default"
                 onClick={this.props.submit}
-              />submit
+              >
+              submit
+              </button>
             </div>
           </Slider>
         </div>
@@ -99,7 +101,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(checkText());
     },
     submit: () => {
-      //dispatch(submit(state));
+      dispatch(submit());
     },
   };
 };
