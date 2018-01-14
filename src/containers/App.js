@@ -34,7 +34,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <div className="container">
-          <Slider ref={this.slider} {...settings}>
+          <Slider ref={c => this.slider = c} {...settings}>
             <div>
               <StepOne
                 state={this.props.state}
@@ -57,11 +57,17 @@ class App extends Component {
                 next={this.next}
               />
             </div>
-            <div><StepFour state={this.props.state} next={this.next} /></div>
+            <div>
+              <StepFour
+                state={this.props.state}
+                next={this.next}
+                handleSelectedBox={this.props.handleSelectedBox}
+              />
+            </div>
             <div>
               <button
                 className="btn btn-default"
-                onClick={this.props.submit(this.props.state)}
+                onClick={this.props.submit}
               />submit
             </div>
           </Slider>
@@ -77,35 +83,34 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleCheckedValues: (value) => {
-      dispatch(addA(value));
+    handleCheckedValues: (event) => {
+      dispatch(addA(event.target.value));
     },
-    handleActivButtons: (value) => {
-      dispatch(setB(value));
+    handleActivButtons: (event) => {
+      dispatch(setB(event.target.value));
     },
-    handleSelectedBox: (value) => {
-      dispatch(setC(value));
+    handleSelectedBox: (event) => {
+      dispatch(setC(event.target.value));
     },
-    handleTextChange: (value) => {
-      dispatch(setText(value));
+    handleTextChange: (event) => {
+      dispatch(setText(event.target.value));
     },
     checkTextFromServer: () => {
       dispatch(checkText());
     },
-    submit: (state) => {
-      dispatch(submit(state));
+    submit: () => {
+      //dispatch(submit(state));
     },
   };
 };
 
 App.propTypes = {
-  next: PropTypes.func.isRequired,
-  state: PropTypes.shape({ a: [] }).isRequired,
   submit: PropTypes.func.isRequired,
   handleCheckedValues: PropTypes.func.isRequired,
   handleActivButtons: PropTypes.func.isRequired,
   handleTextChange: PropTypes.func.isRequired,
   checkTextFromServer: PropTypes.func.isRequired,
+  handleSelectedBox: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -12,7 +12,7 @@ const text = (state = null, action) => {
         .catch((error) => {
           action.asyncDispatch({ type: 'CHECK_FAIL', payload: error });
         });
-      break;
+      return state;
     default:
       return state;
   }

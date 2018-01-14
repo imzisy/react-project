@@ -10,10 +10,11 @@ function StepThree(props) {
       <input type="text" onChange={props.handleTextChange} />
       <button
         onClick={props.checkTextFromServer}
-      />
-        check
+      >
+      check
+      </button>
       <br /><br />
-      <ShowError message={props.state.error.checkFail} />
+      <ShowError message={props.state.error.checkFail || 'Please enter to check from server'} />
       { props.state.form.check ? <NextButton next={props.next} /> : null }
       <br />
     </div>

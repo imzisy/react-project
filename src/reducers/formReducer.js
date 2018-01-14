@@ -3,7 +3,7 @@ import { submitIt } from '../utils/api-request';
 const form = (state = { check: null, submit: null }, action) => {
   switch (action.type) {
     case 'SUBMIT':
-      return submitIt(action.payload)
+      submitIt(action.payload)
         .then({
           return: {
             ...state,
@@ -13,10 +13,16 @@ const form = (state = { check: null, submit: null }, action) => {
         .catch((error) => {
           action.asyncDispatch({ type: 'SUBMIT_FAIL', payload: error });
         });
+      return state;
     case 'CHECK_SUCCESS':
       return {
         ...state,
         check: 'success',
+      };
+    case 'CHECK_FAIL':
+      return {
+        ...state,
+        check: null,
       };
     default:
       return state;
