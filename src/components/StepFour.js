@@ -1,6 +1,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import NextButton from './NextButton';
 
 function StepFour(props) {
   return (
@@ -12,7 +13,7 @@ function StepFour(props) {
         <option value="C3">C3</option>
       </select>
       <br /> <br />
-      <button className="btn btn-default" onClick={props.next}>Next</button>
+      { props.state.c ? <NextButton next={props.next} /> : null }
     </div>
   );
 }
@@ -20,5 +21,6 @@ function StepFour(props) {
 StepFour.propTypes = {
   handleSelectedBox: PropTypes.func.isRequired,
   next: PropTypes.func.isRequired,
+  state: PropTypes.shape({ c: null }).isRequired,
 };
 export default StepFour;

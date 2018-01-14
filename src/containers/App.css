@@ -7,6 +7,8 @@
   height: 80px;
 }
 
+.flash {color: red;}
+
 .active { background:red; }
 
 .App-header {

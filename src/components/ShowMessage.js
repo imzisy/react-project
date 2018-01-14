@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function ShowMessage(props) {
-  return <div>{ props.message}</div>;
+  return <div className="flash">{ props.message}</div>;
 }
 
 ShowMessage.propTypes = {
