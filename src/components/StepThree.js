@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import NextButton from './NextButton';
-import ShowError from './ShowError';
+import ShowMessage from './ShowMessage';
 
 function StepThree(props) {
   return (
@@ -14,7 +14,7 @@ function StepThree(props) {
       check
       </button>
       <br /><br />
-      <ShowError message={props.state.error.checkFail || 'Please enter to check from server'} />
+      <ShowMessage message={props.state.error.checkFail || 'Please enter to check from server'} />
       { props.state.form.check ? <NextButton next={props.next} /> : null }
       <br />
     </div>
