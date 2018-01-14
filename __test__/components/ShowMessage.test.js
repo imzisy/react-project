@@ -6,9 +6,14 @@ import ShowMessage from '../../src/components/ShowMessage';
 
 configure({ adapter: new Adapter() });
 
-const wrapper = shallow(<ShowMessage message="Welcome to React" />);
+const message = 'Welcome to React';
+const wrapper = shallow(<ShowMessage message={message} />);
 
 describe('Show Message Component', () => {
+  it('should show expected message', () => {
+    expect(wrapper.props().children).toEqual(message);
+  });
+
   it('should have an flash class name', () => {
     expect(wrapper.find('.flash')).toHaveLength(1);
   });
