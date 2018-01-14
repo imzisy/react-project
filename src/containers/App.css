@@ -7,6 +7,11 @@
   height: 80px;
 }
 
+li > button {
+  pointer-events: none;
+  cursor: default;
+}
+
 .flash {color: red;}
 
 .active { background:red; }
