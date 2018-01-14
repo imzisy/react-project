@@ -23,6 +23,7 @@ const form = (state = { check: null, submit: null }, action) => {
         check: null,
       };
     case 'SUBMIT_SUCCESS':
+      alert(action.payload);
       return {
         ...state,
         submit: 'success',

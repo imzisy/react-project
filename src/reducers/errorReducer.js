@@ -3,7 +3,7 @@ const error = (state = {}, action) => {
     case 'SUBMIT_FAIL':
       return {
         ...state,
-        submitFail: action.payload,
+        submitFail: String(action.payload),
       };
     case 'CHECK_FAIL':
       return {

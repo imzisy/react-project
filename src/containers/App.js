@@ -9,6 +9,7 @@ import StepTwo from '../components/StepTwo';
 import StepThree from '../components/StepThree';
 import StepFour from '../components/StepFour';
 import Header from '../components/Header';
+import ShowMessage from '../components/ShowMessage';
 
 class App extends Component {
   constructor(props) {
@@ -65,6 +66,13 @@ class App extends Component {
               />
             </div>
             <div>
+              {
+                this.props.state.error.submitFail ?
+                  <ShowMessage
+                    message={this.props.state.error.submitFail}
+                  />
+                : null
+              }
               <button
                 className="btn btn-default"
                 onClick={this.props.submit}
@@ -113,6 +121,7 @@ App.propTypes = {
   handleTextChange: PropTypes.func.isRequired,
   checkTextFromServer: PropTypes.func.isRequired,
   handleSelectedBox: PropTypes.func.isRequired,
+  state: PropTypes.shape({ error: {} }).isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
