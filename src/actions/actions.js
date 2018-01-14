@@ -1,22 +1,22 @@
 export function addA(value) {
-    return {
-        type: "ADD_A",
-        payload: value
-    };
+  return {
+    type: 'ADD_A',
+    payload: value,
+  };
 }
 
 export function setB(value) {
-    return {
-        type: "SET_B",
-        payload: value
-    };
+  return {
+    type: 'SET_B',
+    payload: value,
+  };
 }
 
 export function setC(value) {
-    return {
-        type: "SET_C",
-        payload: value
-    };
+  return {
+    type: 'SET_C',
+    payload: value,
+  };
 }
 
 export function setText(value) {
